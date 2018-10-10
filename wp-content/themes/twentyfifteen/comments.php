@@ -70,5 +70,14 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
-
+    <script type="text/javascript">
+		jQuery( document ).ready(function() {
+			jQuery('#submit').css({'background-color':'red'});
+			jQuery('#submit').val("Нажать!");
+			jQuery('#commentform').on("submit", function(){
+      	;
+   			return false;
+ 			})
+		});
+  </script>
 </div><!-- .comments-area -->
