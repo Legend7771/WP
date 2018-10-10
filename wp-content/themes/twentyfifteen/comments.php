@@ -75,7 +75,12 @@ if ( post_password_required() ) {
 			jQuery('#submit').css({'background-color':'red'});
 			jQuery('#submit').val("Нажать!");
 			jQuery('#commentform').on("submit", function(){
-      	;
+      	jQuery.ajax({
+				  url: "/wp-ajax/comments-add-stat.php",
+				  success: function( result ) {
+				    jQuery('#submit').css({'background-color':'green'});
+				  }
+				});
    			return false;
  			})
 		});
