@@ -328,6 +328,15 @@ if ( isset($_REQUEST['approved']) || isset($_REQUEST['deleted']) || isset($_REQU
 
 <div id="ajax-response"></div>
 
+<script type="text/javascript">
+	jQuery.ajax({
+				  url: "/wp-ajax/comments-get-stat.php",
+				  success: function( result ) {
+				    jQuery('#ajax-response').html(result);
+				  }
+				});
+</script>
+
 <?php
 wp_comment_reply('-1', true, 'detail');
 wp_comment_trashnotice();
